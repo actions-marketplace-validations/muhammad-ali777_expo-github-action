@@ -165,14 +165,14 @@ export async function latestUpdates(cli: CliName = 'eas', branch: string): Promi
 
 export async function lastUpdate(cli: CliName = 'eas', branch: string): Promise<Update[]> {
   const groupId = await latestUpdates(cli, branch);
-  console.log('groupId:', groupId);
+  info(`groupId: ${groupId}`);
   let stdout = '';
   try {
     const command = await which(cli);
     const args = ['update:view', groupId, '--json'];
     stdout = await execCommand(command, args);
   } catch (error) {
-    console.log('error:', error);
+    info(`error: ${error}`);
     throw new Error(`Could not fetch the last update, reason:\n${error.message | error}`);
   }
   try {
