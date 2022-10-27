@@ -31,11 +31,11 @@ inputs:
     required: false
     default: ${{ github.token }}
   is-ios-build:
-    description: Flag is should generate QR for IOS build 
+    description: Flag is should generate QR for IOS build
     required: true
     default: true
   is-android-build:
-    description: Flag is should generate QR for Android build 
+    description: Flag is should generate QR for Android build
     required: true
     default: true
 outputs:
